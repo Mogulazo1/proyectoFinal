@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ullcom - Principal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <span class="navbar-brand p-0">
+                    <span class="brand-logo">U</span>
+                </span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link" href="/index.html">Home</a>
+                        <a class="nav-link" href="/subpaginas/nosotros.html">Nosotros</a>
+                        <a class="nav-link" href="/subpaginas/aMedida.html">A medida</a>
+                        <a class="nav-link" href="/subpaginas/estandar.html">Estandar</a>
+                        <a class="nav-link" href="/subpaginas/contacto.html">Contacto</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="site-main">
+        <section class="sub-hero reveal-up">
+            <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1400&q=80" alt="Fondo">
+            <p>Contáctanos</p>
+        </section>
+        <section class="content-section reveal-up">
+            <div class="container form-wrap">
+                <input class="form-toggle-input" type="radio" name="tipo-contacto" id="switch-asistencia" checked>
+                <input class="form-toggle-input" type="radio" name="tipo-contacto" id="switch-empleo">
+                <div class="form-toggle-wrap">
+                    <div class="form-toggle">
+                        <span class="form-toggle-slider" aria-hidden="true"></span>
+                        <label class="form-toggle-label" for="switch-asistencia">Asistencia</label>
+                        <label class="form-toggle-label" for="switch-empleo">Empleo</label>
+                    </div>
+                </div>
+                <form class="custom-form" enctype="multipart/form-data">
+                    <label for="contacto-nombre">Nombre</label>
+                    <input class="form-control" type="text" id="contacto-nombre" name="nombre" required>
+                    <label for="contacto-apellido">Apellido</label>
+                    <input class="form-control" type="text" id="contacto-apellido" name="apellido" required>
+                    <label for="contacto-email">Email</label>
+                    <input class="form-control" type="email" id="contacto-email" name="email" required>
+                    <label for="contacto-mensaje">Mensaje</label>
+                    <textarea class="form-control" id="contacto-mensaje" name="mensaje" required></textarea>
+                    <div class="employment-only">
+                        <label for="contacto-cv">Curriculum (PDF)</label>
+                        <input class="form-control" type="file" id="contacto-cv" name="curriculum" accept="application/pdf,.pdf">
+                        <p class="field-help">Solo se admiten archivos PDF.</p>
+                    </div>
+                    <button class="form-submit" type="button">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-main">
+                <p class="footer-brand">Ullcom</p>
+                <p class="footer-custom-text">(aca va el texto que vas a escribir vos)</p>
+            </div>
+            <div class="footer-social">
+                <button type="button" class="social-btn" aria-label="Instagram">Instagram</button>
+                <button type="button" class="social-btn" aria-label="Facebook">Facebook</button>
+                <button type="button" class="social-btn" aria-label="TikTok">TikTok</button>
+            </div>
+        </div>
+        <p class="footer-note">ningun derecho reservado, pero por favor sea amable y no nos robe la pagina</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
