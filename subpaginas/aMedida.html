@@ -15,7 +15,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <span class="navbar-brand p-0">
-                    <span class="brand-logo">U</span>
+                    <img src="/img/Logos PNG/Logo ULLCOM - Horizontal solo imagen PNG.png" alt="Logo Ullcom" class="brand-logo">
                 </span>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -39,14 +39,18 @@
         </section>
         <section class="content-section reveal-up">
             <div class="container form-wrap">
-                <form class="custom-form">
+                <form class="custom-form" id="customProjectForm" novalidate>
                     <label for="nombre">Nombre</label>
                     <input class="form-control" type="text" id="nombre" name="nombre" required>
                     <label for="apellido">Apellido</label>
                     <input class="form-control" type="text" id="apellido" name="apellido" required>
                     <label for="desc">Detallanos tu proyecto</label>
                     <textarea class="form-control" id="desc" name="desc" required></textarea>
-                    <button class="form-submit" type="button">Enviar consulta</button>
+                    <label for="imagenes-proyecto">Imagenes del proyecto</label>
+                    <input class="form-control" type="file" id="imagenes-proyecto" name="imagenes-proyecto" accept="image/*" multiple>
+                    <p class="field-help">Podes subir una o varias imagenes para mostrarnos tu idea.</p>
+                    <button class="form-submit" type="submit">Enviar consulta</button>
+                    <div id="projectNotice" class="alert alert-success mt-3 d-none" role="status" aria-live="polite">¡Tu proyecto fue enviado!</div>
                 </form>
             </div>
         </section>
@@ -55,7 +59,7 @@
         <div class="container footer-content">
             <div class="footer-main">
                 <p class="footer-brand">Ullcom</p>
-                <p class="footer-custom-text">(aca va el texto que vas a escribir vos)</p>
+                <p class="footer-custom-text">Muebles premium, hechos a mano con toda la pasión y dedicación.</p>
             </div>
             <div class="footer-social">
                 <button type="button" class="social-btn" aria-label="Instagram">Instagram</button>
@@ -63,8 +67,32 @@
                 <button type="button" class="social-btn" aria-label="TikTok">TikTok</button>
             </div>
         </div>
-        <p class="footer-note">ningun derecho reservado, pero por favor sea amable y no nos robe la pagina</p>
+        <p class="footer-note">Todos los derechos reservados &copy; Ullcom 2026</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        const customProjectForm = document.getElementById("customProjectForm");
+        const projectNotice = document.getElementById("projectNotice");
+        let noticeTimer;
+
+        if (customProjectForm && projectNotice) {
+            customProjectForm.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                if (!customProjectForm.checkValidity()) {
+                    customProjectForm.reportValidity();
+                    return;
+                }
+
+                customProjectForm.reset();
+                projectNotice.classList.remove("d-none");
+
+                clearTimeout(noticeTimer);
+                noticeTimer = setTimeout(function () {
+                    projectNotice.classList.add("d-none");
+                }, 3000);
+            });
+        }
+    </script>
 </body>
 </html>

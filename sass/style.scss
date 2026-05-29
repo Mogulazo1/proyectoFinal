@@ -16,6 +16,11 @@ html {
 	overflow-y: scroll;
 }
 
+img {
+	max-width: 100%;
+	height: auto;
+}
+
 body {
 	margin: 0;
 	font-family: "Outfit", sans-serif;
@@ -25,11 +30,12 @@ body {
 		radial-gradient(circle at 85% 15%, rgba(37, 51, 38, 0.1), transparent 40%),
 		linear-gradient(180deg, $bg-main 0%, $bg-soft 100%);
 	min-height: 100vh;
-	padding-top: 62px;
+	padding-top: 82px;
 }
 
 .site-main {
 	padding: 0 0 3rem;
+	overflow-x: clip;
 }
 
 .site-header {
@@ -49,11 +55,10 @@ body {
 	}
 
 	.brand-logo {
-		font-size: 1.3rem;
-		font-weight: 700;
-		color: $text-main;
-		line-height: 1;
-		letter-spacing: -0.02em;
+		display: block;
+		height: 56px;
+		width: auto;
+		object-fit: contain;
 	}
 
 	.nav-link {
@@ -458,18 +463,59 @@ body {
 }
 
 @media (max-width: 991.98px) {
+	body {
+		padding-top: 76px;
+	}
+
 	.site-header {
 		.navbar-collapse {
+			margin-top: 0.55rem;
 			padding-top: 0.75rem;
+			border-top: 1px solid rgba(216, 202, 180, 0.8);
+		}
+
+		.navbar-nav {
+			gap: 0.15rem;
 		}
 
 		.nav-link {
+			display: block;
+			width: 100%;
 			margin: 0.2rem 0;
+			padding: 0.55rem 0.95rem;
 		}
 	}
 }
 
 @media (max-width: 767.98px) {
+	body {
+		padding-top: 72px;
+	}
+
+	.site-main {
+		padding-bottom: 2.2rem;
+	}
+
+	.sub-hero {
+		min-height: clamp(160px, 46vw, 240px);
+		margin-bottom: 1.4rem;
+	}
+
+	.content-section {
+		margin: 1rem 0;
+	}
+
+	.text-block,
+	.info-card,
+	.form-wrap {
+		border-radius: 0.85rem;
+	}
+
+	.text-block p,
+	.info-card p {
+		line-height: 1.55;
+	}
+
 	.gallery-masonry {
 		grid-template-columns: repeat(2, 1fr);
 		grid-auto-rows: 120px;
@@ -486,6 +532,10 @@ body {
 }
 
 @media (max-width: 575.98px) {
+	.site-header .brand-logo {
+		height: 44px;
+	}
+
 	.hero-section,
 	.sub-hero {
 		width: 100%;
@@ -499,6 +549,10 @@ body {
 
 	.image-stack {
 		gap: 0.6rem;
+
+		img {
+			aspect-ratio: 4 / 5;
+		}
 	}
 
 	.gallery-masonry {
@@ -511,6 +565,10 @@ body {
 	.site-footer .footer-content {
 		justify-content: center;
 		text-align: center;
+	}
+
+	.site-footer .footer-main {
+		max-width: 100%;
 	}
 
 	.site-footer .footer-social {

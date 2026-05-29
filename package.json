@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "sass:build": "sass sass/style.scss css/style.css --style=expanded",
+    "sass:watch": "sass --watch sass/style.scss:css/style.css --style=expanded",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
