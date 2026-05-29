@@ -43,6 +43,7 @@ body {
 .site-header .brand-logo {
   display: block;
   height: 56px;
+  max-width: min(280px, 48vw);
   width: auto;
   object-fit: contain;
 }
@@ -377,6 +378,13 @@ body {
   font-weight: 700;
   font-size: 1.3rem;
 }
+.site-footer .footer-brand-logo {
+  display: block;
+  height: 42px;
+  width: auto;
+  max-width: min(300px, 75vw);
+  object-fit: contain;
+}
 .site-footer .footer-custom-text {
   margin: 0.35rem 0 0;
   color: rgba(247, 241, 232, 0.78);
@@ -499,6 +507,7 @@ body {
 @media (max-width: 575.98px) {
   .site-header .brand-logo {
     height: 44px;
+    max-width: min(210px, 56vw);
   }
   .hero-section,
   .sub-hero {
@@ -529,9 +538,24 @@ body {
   .site-footer .footer-main {
     max-width: 100%;
   }
+  .site-footer .footer-brand-logo {
+    height: 36px;
+    max-width: min(240px, 78vw);
+    margin: 0 auto;
+  }
   .site-footer .footer-social {
     justify-content: center;
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
